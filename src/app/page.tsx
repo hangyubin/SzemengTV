@@ -384,26 +384,6 @@ function HomeClient() {
             // 首页视图
             <>
               {/* Hero Banner 轮播 */}
-              {!loading && (hotMovies.length > 0 || hotTvShows.length > 0) && (
-                <section className='mb-8'>
-                  <HeroBanner
-                    items={[...hotMovies.slice(0, 5), ...hotTvShows.slice(0, 3)]
-                      .map((item) => ({
-                        id: item.id,
-                        title: item.title,
-                        poster: item.poster,
-                        description: item.plot_summary,
-                        year: item.year,
-                        rate: item.rate,
-                        douban_id: Number(item.id),
-                        type: hotMovies.includes(item) ? 'movie' : 'tv',
-                      }))}
-                    autoPlayInterval={5000}
-                    showControls={true}
-                    showIndicators={true}
-                  />
-                </section>
-              )}
 
               {/* 继续观看 */}
               <ContinueWatching />
